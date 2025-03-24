@@ -2,14 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Documents;
 using AesVisualizer.Components.MainPanel.Aes.Pages;
 
 namespace AesVisualizer.Components.MainPanel.Aes {
     public class PagesBuilder {
         private byte[]   state ;
-        private IPage[]  pages ;
+        private BasePage[]  pages ;
         
         private readonly int roundsCount;
         private readonly int pagesAmount;
@@ -44,15 +42,17 @@ namespace AesVisualizer.Components.MainPanel.Aes {
             );
         }
 
-        public void BuildPages(byte[] keyBytes, out UInt32[] expKey) {
+        public BasePage[] BuildPages(byte[] keyBytes, out UInt32[] expKey) {
             pageIndex = 0;
             PrefixActions(keyBytes, out expKey);
             MainCycle    (expKey);
             SuffixActions(expKey);
+            return pages;
         }
 
         public PagesBuilder(byte[] srcState, int roundsCount) {
-            pagesAmount = 2 + 4 * (roundsCount - 1) + 3;
+            this.roundsCount = roundsCount;
+            pagesAmount = 2 + 4*(roundsCount - 1) + 3;
             state = (byte[])srcState.Clone();
             pages = new BasePage[pagesAmount];
         }

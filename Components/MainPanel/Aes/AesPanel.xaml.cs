@@ -67,7 +67,8 @@ namespace AesVisualizer.Components.MainPanel.Aes {
             
             UInt32[] expKey;
             var pageBuilder = new PagesBuilder(srcState, roundsCount);
-            pageBuilder.BuildPages(keyBytes, out expKey);
+            pages = pageBuilder.BuildPages(keyBytes, out expKey);
+
             LogPipeline(srcState, expKey, roundsCount);
             AddPagesToGrid();
         }

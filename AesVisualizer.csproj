@@ -70,6 +70,8 @@
     <Compile Include="Components\Grids\HexVector.xaml.cs">
       <DependentUpon>HexVector.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Components\MainPanel\Aes\PagesBuilder\PagesBuilder.cs" />
+    <Compile Include="Components\MainPanel\Aes\Pages\BasePage.cs" />
     <Compile Include="Components\MainPanel\Aes\Pages\KeyExpansion\Consts.cs" />
     <Compile Include="Components\MainPanel\Aes\Pages\KeyExpansion\KeyExpander.cs" />
     <Compile Include="Components\MainPanel\Aes\Pages\MixColumnsComponents\Details.xaml.cs">
@@ -231,7 +233,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Math\Arithmetics.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
