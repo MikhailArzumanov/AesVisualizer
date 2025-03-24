@@ -1,0 +1,71 @@
+﻿<UserControl 
+    x:Class="AesVisualizer.Components.MainPanel.Aes.Pages.MixColumnsComponents.MainPart"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:local="clr-namespace:AesVisualizer.Components.MainPanel.Aes.Pages.MixColumnsComponents"
+    xmlns:grids="clr-namespace:AesVisualizer.Components.Grids"
+    mc:Ignorable="d" d:DesignHeight="320" d:DesignWidth="700"
+    d:Background="White"
+>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Column="0"  Grid.ColumnSpan="6"
+            TextWrapping="Wrap" FontSize="20" TextAlignment="Center"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+        >
+            Шаг MixColumns полагает матричное произведение в GF(2⁸) 
+            <LineBreak/>
+            каждого из столбцов состояния на матрицу смешения.
+        </TextBlock>
+        <grids:HexGrid x:Name="stateGrid"
+            Grid.Row="1" Grid.Column="0"
+        />
+        <Label Grid.Row="2" Grid.Column="0"
+            Content="Состояние" FontSize="20"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+        />
+        <Label Grid.Row="1" Grid.Column="1"
+            Content="X" FontSize="24"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+        />
+
+        <grids:HexGrid x:Name="mixingGrid"
+            Grid.Row="1" Grid.Column="2"
+        />
+        <Label Grid.Row="2" Grid.Column="2"
+            Content="Матрица смешения" FontSize="20"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+        />
+        <Label Grid.Row="1" Grid.Column="3"
+            Content="=" FontSize="24"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+        />
+
+        <grids:HexGrid x:Name="resGrid"
+            Grid.Row="1" Grid.Column="5"
+        />
+        <Label Grid.Row="2" Grid.Column="5"
+            Content="Результат" FontSize="20"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+        />
+    </Grid>
+</UserControl>

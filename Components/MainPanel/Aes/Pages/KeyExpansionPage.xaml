@@ -1,0 +1,51 @@
+﻿<local:BasePage 
+    x:Class="AesVisualizer.Components.MainPanel.Aes.Pages.KeyExpansionPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:local="clr-namespace:AesVisualizer.Components.MainPanel.Aes.Pages"
+    mc:Ignorable="d" d:DesignHeight="450" d:DesignWidth="800"
+    d:Background="White"
+>
+    <ScrollViewer>
+        <Grid x:Name="mainGrid" Margin="12">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="48"/>
+                <RowDefinition Height="48"/>
+                <RowDefinition Height="72"/>
+                <RowDefinition Height="24"/>
+                <RowDefinition Height="24"/>
+            </Grid.RowDefinitions>
+            <TextBlock FontFamily="Consolas" FontSize="40">
+                Key expansion
+            </TextBlock>
+            <TextBlock x:Name="prefixTextBlock" Grid.Row="1"
+                FontSize="20" TextWrapping="Wrap" FontFamily="Consolas"
+            >
+                Первые значения заполняются исходным ключом.
+                <LineBreak/>
+                В дальнейшем значения вычисляются как w[i-6] xor tmp
+            </TextBlock>
+            <TextBlock FontSize="20" TextWrapping="Wrap" 
+                FontFamily="Consolas" Grid.Row="2"
+                Margin="48,0,0,0"
+            >
+                tmp = SubWord(RotWord(w[i-1])) xor Rcon[i/Nk] при i mod Nk = 0
+                <LineBreak/>
+                tmp = SubWord(w[i-1]) при Nk = 8, i mod Nk = 4
+                <LineBreak/>
+                tmp = w[i-1] в ином случае
+            </TextBlock>
+            <TextBlock FontSize="20" TextWrapping="Wrap" 
+                FontFamily="Consolas" Grid.Row="3"
+            >
+                Где Nk – число 4-байтных слов в ключе.
+            </TextBlock>
+            <Rectangle Grid.Row="4" Height="1"
+               Margin="11" Fill="Black"
+            />
+
+        </Grid>
+    </ScrollViewer>
+</local:BasePage>

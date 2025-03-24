@@ -1,0 +1,60 @@
+﻿<UserControl 
+    x:Class="AesVisualizer.Components.MainPanel.Aes.Pages.SubBytesComponents.MainPart"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:local="clr-namespace:AesVisualizer.Components.MainPanel.Aes.Pages.SubBytesComponents"
+    xmlns:grids="clr-namespace:AesVisualizer.Components.Grids"
+    mc:Ignorable="d" d:DesignHeight="320" d:DesignWidth="533"
+    d:Background="White"
+>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"  />
+            <RowDefinition Height="200" />
+            <RowDefinition Height="60"  />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="1*"  />
+            <ColumnDefinition Width="200" />
+        </Grid.ColumnDefinitions>
+        <TextBlock FontSize="16" TextAlignment="Center"
+            VerticalAlignment="Center"
+            Grid.Column="0" Grid.ColumnSpan="3"
+        >
+            Шаг SubBytes полагает замену каждого байта взятием обратного, 
+            <LineBreak />
+            побитового матричного умножения и операции xor.
+        </TextBlock>
+        <grids:HexGrid x:Name="prevStateGrid"
+            Grid.Row="1" Grid.Column="0"
+        />
+        <Label Grid.Row="2" Grid.Column="0"
+            FontSize="20" Content="Состояние"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+        />
+
+        <Label Grid.Row="1" Grid.Column="1"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            FontSize="12" Content="SubBytes(state[i,j])"
+        />
+        <Label Grid.Row="1" Grid.Column="1"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Center"
+            FontSize="48" Content="→" Margin="0,70,0,0"
+        />
+
+        <grids:HexGrid x:Name="nextStateGrid"
+            Grid.Row="1" Grid.Column="2"
+        />
+        <Label Grid.Row="2" Grid.Column="2"
+            FontSize="20" Content="Результат"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+        />
+    </Grid>
+</UserControl>

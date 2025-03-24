@@ -1,0 +1,94 @@
+﻿<UserControl 
+    x:Class="AesVisualizer.Components.MainPanel.Aes.Pages.SubBytesComponents.Details"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:local="clr-namespace:AesVisualizer.Components.MainPanel.Aes.Pages.SubBytesComponents"
+    xmlns:grids="clr-namespace:AesVisualizer.Components.Grids"
+    mc:Ignorable="d" d:DesignHeight="480" d:DesignWidth="800"
+    d:Background="White"
+>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock x:Name="revDescription"
+            Grid.Row="0" Grid.Column="1"
+            FontSize="14" TextAlignment="Center"
+            HorizontalAlignment="Center" VerticalAlignment="Center"
+        >
+            Первым этапом идёт поиск обратного в поле галуа GF(2⁸) 
+            <LineBreak/>
+            по модулю g(x) = x⁸ + x⁴ + x³ + x + 1. Для 0x{1} представлено как 0x{1}.
+        </TextBlock>
+        <TextBlock x:Name="bitRepresentationBlock"
+            Grid.Row="1" Grid.Column="1"
+            FontSize="16" 
+            TextAlignment="Center" TextWrapping="Wrap"
+            VerticalAlignment="Center"
+            Text="Далее проводится матричное умножение битового представления числа 0x{0} = 0b{1}"
+        />
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="40" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="40" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <grids:BitGrid x:Name="multiplierMatrix"
+                Grid.Column="1"
+            />
+            <Label Grid.Column="2"
+                FontSize="20" Content="X"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+            />
+            <grids:BitVector x:Name="numBits"
+                Grid.Column="3"
+            />
+            <Label Grid.Column="4"
+                FontSize="20" Content="="
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+            />
+            <grids:BitVector x:Name="tmpResBits"
+                Grid.Column="5"
+            />
+        </Grid>
+        <TextBlock Grid.Row="3" Grid.Column="1"
+            TextAlignment="Center" FontSize="14"
+            VerticalAlignment="Center"
+        >
+            Эта операция представима также следующим выражением:
+            <LineBreak/>
+            b'[i] =b[i] xor b[i+4 mod 8] xor b[i+5 mod 8] xor b[i+6 mod 8] xor b[i+7 mod 8]
+        </TextBlock>
+        <TextBlock Grid.Row="4" Grid.Column="1"
+            FontSize="20" TextWrapping="Wrap"
+            TextAlignment="Center"
+        >
+            Далее производится операция xor результата
+            преобразований с константой c = 0x63 = 0b1100011
+        </TextBlock>
+        <TextBlock x:Name="resultingDetail"
+            Grid.Row="5" Grid.Column="1"
+            FontSize="40" TextAlignment="Center"
+        >
+            0x{0} xor 0x{1} = 0x{2}
+        </TextBlock>
+    </Grid>
+</UserControl>
