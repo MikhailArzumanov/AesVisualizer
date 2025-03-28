@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace AesVisualizer.Converting {
-    internal class Hex {
+namespace Converting {
+    public class Hex {
         private static byte HexDigitToByte(char digit) {
             if ('0' <= digit && digit <= '9') {
                 return (byte)(digit - '0');
@@ -25,7 +28,7 @@ namespace AesVisualizer.Converting {
                 byte lh = HexDigitToByte(hexStr[2 * i]),
                      rh = HexDigitToByte(hexStr[2 * i + 1]);
                 if(lh == 255 || rh == 255) {
-                    return null;
+                    return new byte[0];
                 }
                 result[i] ^= (byte)(lh << 4);
                 result[i] ^= rh;

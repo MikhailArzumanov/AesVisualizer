@@ -1,9 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35514.174 d17.12
+VisualStudioVersion = 17.12.35514.174
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AesVisualizer", "AesVisualizer.csproj", "{A23BADEE-4371-44FA-AE3E-87E9BACA5D4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AesVisualizer.Tests", "AesVisualizer.Tests\AesVisualizer.Tests.csproj", "{806D0837-36D1-4D82-B9C8-3B9B1DF25F53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AesService", "AesService\AesService.csproj", "{54267937-26E1-4AFC-8307-0C92B479FC89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Math", "Math\Math.csproj", "{5A45D24B-B631-4291-B846-C9A381039796}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Constants", "Constants\Constants.csproj", "{6006372A-4DFC-4BB4-A624-7F5C21D65AC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Converting", "Converting\Converting.csproj", "{A4D1D54D-BBFC-41E0-A08B-AFE961CB8306}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +25,26 @@ Global
 		{A23BADEE-4371-44FA-AE3E-87E9BACA5D4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A23BADEE-4371-44FA-AE3E-87E9BACA5D4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A23BADEE-4371-44FA-AE3E-87E9BACA5D4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{806D0837-36D1-4D82-B9C8-3B9B1DF25F53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{806D0837-36D1-4D82-B9C8-3B9B1DF25F53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{806D0837-36D1-4D82-B9C8-3B9B1DF25F53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{806D0837-36D1-4D82-B9C8-3B9B1DF25F53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54267937-26E1-4AFC-8307-0C92B479FC89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54267937-26E1-4AFC-8307-0C92B479FC89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54267937-26E1-4AFC-8307-0C92B479FC89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54267937-26E1-4AFC-8307-0C92B479FC89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A45D24B-B631-4291-B846-C9A381039796}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A45D24B-B631-4291-B846-C9A381039796}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A45D24B-B631-4291-B846-C9A381039796}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A45D24B-B631-4291-B846-C9A381039796}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6006372A-4DFC-4BB4-A624-7F5C21D65AC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6006372A-4DFC-4BB4-A624-7F5C21D65AC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6006372A-4DFC-4BB4-A624-7F5C21D65AC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6006372A-4DFC-4BB4-A624-7F5C21D65AC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4D1D54D-BBFC-41E0-A08B-AFE961CB8306}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4D1D54D-BBFC-41E0-A08B-AFE961CB8306}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4D1D54D-BBFC-41E0-A08B-AFE961CB8306}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4D1D54D-BBFC-41E0-A08B-AFE961CB8306}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

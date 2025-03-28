@@ -72,8 +72,6 @@
     </Compile>
     <Compile Include="Components\MainPanel\Aes\PagesBuilder\PagesBuilder.cs" />
     <Compile Include="Components\MainPanel\Aes\Pages\BasePage.cs" />
-    <Compile Include="Components\MainPanel\Aes\Pages\KeyExpansion\Consts.cs" />
-    <Compile Include="Components\MainPanel\Aes\Pages\KeyExpansion\KeyExpander.cs" />
     <Compile Include="Components\MainPanel\Aes\Pages\MixColumnsComponents\Details.xaml.cs">
       <DependentUpon>Details.xaml</DependentUpon>
     </Compile>
@@ -95,11 +93,8 @@
     <Compile Include="Components\MainPanel\Aes\Pages\SubBytesPage.xaml.cs">
       <DependentUpon>SubBytesPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Converting\Bits.cs" />
-    <Compile Include="Converting\Integers.cs" />
     <Compile Include="Files\AesRecordFormatter.cs" />
     <Compile Include="Files\AesRecorder.cs" />
-    <Compile Include="Math\Galois.cs" />
     <Compile Include="Styles\HexGridBackgrounds.cs" />
     <Page Include="Components\Divisors\Divisor.xaml">
       <SubType>Designer</SubType>
@@ -226,7 +221,6 @@
     <Compile Include="Components\SideMenu\SideMenu.xaml.cs">
       <DependentUpon>SideMenu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Converting\Hex.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -258,13 +252,34 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Resource Include="ico.ico" />
     <Resource Include="Media\logo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Content Include="Media\logo.svg" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="AesService\AesService.csproj">
+      <Project>{54267937-26e1-4afc-8307-0c92b479fc89}</Project>
+      <Name>AesService</Name>
+    </ProjectReference>
+    <ProjectReference Include="Constants\Constants.csproj">
+      <Project>{6006372a-4dfc-4bb4-a624-7f5c21d65ac1}</Project>
+      <Name>Constants</Name>
+    </ProjectReference>
+    <ProjectReference Include="Converting\Converting.csproj">
+      <Project>{a4d1d54d-bbfc-41e0-a08b-afe961cb8306}</Project>
+      <Name>Converting</Name>
+    </ProjectReference>
+    <ProjectReference Include="Math\Math.csproj">
+      <Project>{5a45d24b-b631-4291-b846-c9a381039796}</Project>
+      <Name>Math</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

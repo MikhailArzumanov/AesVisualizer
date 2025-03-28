@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AesVisualizer.Math {
+namespace Math {
     using word = UInt32;
     public class Galois {
         private const word FIRST_WORD_BIT = 0x1u << 31;

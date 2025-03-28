@@ -1,11 +1,12 @@
-﻿using AesVisualizer.Converting;
+﻿using Converting;
+using Constants;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AesVisualizer.Components.MainPanel.Aes.Pages.KeyExpansion {
+namespace AesService {
     public class KeyExpander {
 
         private UInt32[] ExpKey { get; set; } = null;

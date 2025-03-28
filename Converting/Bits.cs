@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AesVisualizer.Converting {
+namespace Converting {
     public class Bits {
         public static string ByteToBits(byte x) {
             char[] bits = new char[8];

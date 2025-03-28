@@ -1,5 +1,5 @@
-﻿using AesVisualizer.Converting;
-using AesVisualizer.Math;
+﻿using Converting;
+using Math;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AesVisualizer.Converting {
-    internal class Integers {
+namespace Converting {
+    public class Integers {
         private static byte[] UintToBytes(UInt32 x) {
             return new byte[]{
                 (byte)((x >> 24) & 0xff),
